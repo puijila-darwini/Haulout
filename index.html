@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Haulout Architecture Sandbox</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="app-header">
+        <div><strong>HAULOUT ARCHITECTURE SYSTEM</strong></div>
+        <div style="display:flex; align-items:center; gap:15px;">
+            <div class="clock-display" id="sim-clock">Awaiting Engine Core...</div>
+            <button class="btn" id="toggle-obs-btn">Observatory</button>
+        </div>
+    </header>
+    <main class="app-layout">
+        <!-- Main Coast View Section -->
+        <section class="viewport-section">
+            <div id="coast-viewport" class="coast-grid"></div>
+        </section>
+
+        <!-- Fixed Right Logs Sidebar -->
+        <aside class="right-sidebar">
+            <div style="background:var(--bg-secondary); padding:8px; border:1px solid var(--border-color); border-radius:4px; height: 40%; display:flex; flex-direction:column;">
+                <h4 style="margin:0 0 5px 0; border-bottom:1px solid var(--border-color); padding-bottom:2px;">Alert Matrix</h4>
+                <div id="notifications-viewport" style="flex-grow:1; overflow-y:auto;"></div>
+            </div>
+            <div style="background:var(--bg-secondary); padding:8px; border:1px solid var(--border-color); border-radius:4px; height: 60%; display:flex; flex-direction:column;">
+                <h4 style="margin:0 0 5px 0; border-bottom:1px solid var(--border-color); padding-bottom:2px;">Journal Log</h4>
+                <div id="journal-viewport" style="flex-grow:1; overflow-y:auto;"></div>
+            </div>
+        </aside>
+
+        <!-- Observatory Panel sits flush to the right of your sidebars -->
+        <div id="observatory-panel" class="hidden"></div>
+    </main>
+    <script type="module" src="ui.js"></script>
+</body>
+</html>
